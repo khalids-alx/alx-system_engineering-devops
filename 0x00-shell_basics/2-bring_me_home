@@ -1,2 +1,4 @@
 #!/bin/bash
-cd $(getent passwd $(whoami) | cut -d: -f6)
+username=$(whoami)
+IFS=':' read -r _ _ _ _ _ home_dir _ < <(grep "^$username:" /etc/passwd)
+cd "$home_dir"
