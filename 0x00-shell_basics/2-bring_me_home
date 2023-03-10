@@ -1,2 +1,2 @@
 #!/bin/bash
-cd $(awk -F: '/^'$USER'/ {print $6}' /etc/passwd)
+cd
